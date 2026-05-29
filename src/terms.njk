@@ -1,0 +1,67 @@
+---
+layout: base.njk
+title: "Terms of Use"
+permalink: /terms/
+bodyClass: legal
+---
+
+<article class="legal">
+
+<h1>Terms of Use</h1>
+<p class="meta">Last updated: May 28, 2026.</p>
+
+<p>These terms apply to your use of the FlatSixDynamics iOS application (&ldquo;the App&rdquo;). By installing or using the App, you agree to them. If you don't, please uninstall.</p>
+
+<h2>The Short Version</h2>
+
+<p>FlatSixDynamics is a real-time computational fluid dynamics demonstration that visualises the airflow around a 2D cross-section of a sports car. It exists to be looked at, learned from, and enjoyed. It is <strong>not</strong> an engineering tool. Treat the numbers it shows the way you would treat the figures on a wristwatch's tachymeter scale: meaningful within the instrument, not authoritative outside it.</p>
+
+<h2>What the App Is</h2>
+
+<p>FlatSixDynamics solves the compressible Navier&ndash;Stokes equations in two dimensions over a discretised grid using textbook numerical methods (HLLC flux, MUSCL reconstruction, SSP-RK3 time integration). It displays the resulting velocity, pressure, and derived quantities as a heatmap, vector field, and live telemetry.</p>
+
+<p>It is intended for: appreciation of aerodynamic phenomena, educational exploration, and the simple pleasure of watching pressure waves form behind a moving object.</p>
+
+<h2>What the App Is Not</h2>
+
+<p>The App is <strong>not</strong>:</p>
+
+<ul>
+    <li>A validated CFD code for engineering decision-making.</li>
+    <li>A source of force, drag, or downforce coefficients suitable for vehicle development.</li>
+    <li>A predictor of real-world aerodynamic performance of any specific vehicle.</li>
+    <li>An affiliated, licensed, or endorsed product of any automobile manufacturer.</li>
+    <li>A substitute for wind-tunnel testing, full 3D RANS / LES simulation, or competent professional judgement.</li>
+</ul>
+
+<p>Numerical values shown in the App are illustrative. They are derived from a simplified two-dimensional model running on consumer-grade GPU hardware in real time, with all the approximations that implies. Do not use them to inform any decision that has consequences in the physical world.</p>
+
+<h2>Vehicle References</h2>
+
+<p>The silhouette displayed in the App is a stylised two-dimensional cross-section, drawn for visualisation purposes. It is presented as a generic mid-engine sports car profile. FlatSixDynamics is not affiliated with, endorsed by, or sponsored by any vehicle manufacturer. All trademarks remain the property of their respective owners.</p>
+
+<h2>Intellectual Property</h2>
+
+<p>The App, its source code, and the visualisations it produces are &copy; 2026 the developer. The numerical methods used are textbook techniques in the public domain. The FlatSixDynamics name and brand are claimed as common-law marks; defensive registration is in preparation.</p>
+
+<h2>Limitation of Liability</h2>
+
+<p>To the maximum extent permitted by law: the App is provided &ldquo;as is&rdquo;, without warranty of any kind. The developer accepts no liability for any decision taken, or not taken, on the basis of anything the App displays. Where local consumer-protection law guarantees rights that cannot be waived (German Produkthaftungsgesetz, EU Consumer Sales Directive, equivalent statutes in other jurisdictions), those rights remain unaffected.</p>
+
+<h2>In-App Purchases</h2>
+
+<p>If and when the App offers paid features, those purchases are handled by Apple under the App Store's standard terms. Refund requests follow Apple's process. EU residents may request a refund directly through Apple at <a href="https://support.apple.com/HT204084">support.apple.com/HT204084</a> within fourteen days of purchase for any reason.</p>
+
+<h2>Changes to These Terms</h2>
+
+<p>Material changes will be surfaced in the App's &ldquo;About&rdquo; panel before they take effect. Continued use of the App after a change constitutes acceptance.</p>
+
+<h2>Governing Law</h2>
+
+<p>These terms are governed by the laws of the Federal Republic of Germany. The courts of the developer's place of residence shall have jurisdiction, except where mandatory consumer-protection law of your country of residence requires otherwise.</p>
+
+<h2>Contact</h2>
+
+<p><a href="mailto:{{ site.legalEmail }}">{{ site.legalEmail }}</a></p>
+
+</article>

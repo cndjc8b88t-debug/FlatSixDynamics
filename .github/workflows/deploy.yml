@@ -1,0 +1,67 @@
+name: Deploy Eleventy site to GitHub Pages
+
+# Build on every push to the default branch, then publish to GitHub Pages.
+on:
+  push:
+    branches: [main]
+  # Allow a manual run from the Actions tab.
+  workflow_dispatch:
+
+# Least-privilege token: read the repo, write Pages, mint an OIDC id-token.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never run two deploys at once; let an in-progress deploy finish so a
+# half-published site is never left live.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          # Uses package-lock.json for cache + `npm ci`. A lockfile IS
+          # committed in this repo, so `npm ci` works out of the box.
+          # (If you ever remove the lockfile, swap `npm ci` for `npm install`.)
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure Pages
+        # Sets up the Pages deployment context.
+        uses: actions/configure-pages@v5
+
+      - name: Build with Eleventy
+        # PATH_PREFIX must match the project-site subpath so internal links
+        # and assets resolve under /FlatSixDynamics/. When you move to a root
+        # custom domain (flatsixdynamics.com), set PATH_PREFIX to "/".
+        env:
+          PATH_PREFIX: "/FlatSixDynamics/"
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
