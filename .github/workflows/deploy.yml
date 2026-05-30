@@ -43,11 +43,12 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build with Eleventy
-        # PATH_PREFIX must match the project-site subpath so internal links
-        # and assets resolve under /FlatSixDynamics/. When you move to a root
-        # custom domain (flatsixdynamics.com), set PATH_PREFIX to "/".
+        # Custom domain flatsixdynamics.com (CNAME) serves at ROOT → PATH_PREFIX
+        # must be "/" so assets/links resolve at the domain root. (Use
+        # "/FlatSixDynamics/" only if serving from the github.io project URL
+        # without a custom domain.)
         env:
-          PATH_PREFIX: "/FlatSixDynamics/"
+          PATH_PREFIX: "/"
         run: npm run build
 
       - name: Upload Pages artifact
