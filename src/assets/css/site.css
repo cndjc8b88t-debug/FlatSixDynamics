@@ -168,26 +168,9 @@ pre  { font-family: var(--mono); font-size: 0.85rem; padding: 1rem; background: 
     display: block;
 }
 
-/* ---- Imagery: full-bleed hero photo + restrained inline shots ---- */
+/* ---- Imagery: restrained inline shots (screenshots, video) ---- */
 
-/* break out of the narrow reading column to the viewport edges */
-.bleed {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-}
-.hero-shot {
-    margin-top: 2.75rem;
-    margin-bottom: 0;
-}
-.hero-shot img {
-    display: block;
-    width: 100%;
-    height: clamp(280px, 46vw, 560px);
-    object-fit: cover;
-}
-
-/* inline figure for app screenshots and emotional photos —
+/* inline figure for app screenshots and the flow-development clip —
    allowed to spill past the narrow reading column, centred on the viewport */
 .shot {
     width: min(44rem, 92vw);
@@ -196,14 +179,16 @@ pre  { font-family: var(--mono); font-size: 0.85rem; padding: 1rem; background: 
     margin-top: 2.25rem;
     margin-bottom: 0.5rem;
 }
-.shot img {
+.shot img,
+.shot video {
     display: block;
     width: 100%;
     height: auto;
     border-radius: 6px;
     box-shadow: 0 10px 34px rgba(20,24,28,0.16);
 }
-.shot.screen img { border: 1px solid var(--rule); }
+.shot.screen img,
+.shot.screen video { border: 1px solid var(--rule); }
 .shot figcaption {
     font-family: var(--sans);
     font-size: 0.78rem;
