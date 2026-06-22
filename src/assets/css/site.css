@@ -99,9 +99,12 @@ main.wide { max-width: 52rem; }
     flex-wrap: wrap;
     gap: 1rem;
 }
-.footer-nav { display: flex; gap: 1.25rem; }
+.footer-nav { display: flex; gap: 1.25rem; align-items: center; }
 .footer-nav a { text-decoration: none; color: var(--muted); }
 .footer-nav a:hover { color: var(--ink); }
+.footer-ig { display: inline-flex; align-items: center; gap: 0.4rem; }
+.footer-ig-icon { display: block; opacity: 0.85; }
+.footer-ig:hover .footer-ig-icon { opacity: 1; }
 .footer-note {
     margin: 1.25rem 0 0;
     max-width: 44rem;
@@ -266,3 +269,37 @@ html[lang="de"] {
     --serif: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 html[lang="de"] body { font-family: var(--serif); }
+
+/* ---- Promo video (homepage) ---- */
+.promo {
+    max-width: 60rem;
+    margin: 2.5rem auto 0;
+    padding: 0 var(--gap);
+}
+.promo-video { margin-top: 0; margin-bottom: 0; }
+.promo-video video { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; }
+
+/* ---- What's New (homepage section) ---- */
+.whats-new-meta {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+}
+
+/* ---- Release notes (Notes page) ---- */
+.release {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+}
+.release h2 { font-size: 1.3rem; margin-bottom: 0.25rem; }
+.release-date {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.release ul { padding-left: 1.1rem; }
+.release li { margin-bottom: 0.5rem; }

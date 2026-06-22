@@ -2,9 +2,13 @@
   "title": "FlatSixDynamics",
   "tagline": "See the air. Feel the speed. A sports car's airflow, alive in your hand.",
   "baseUrl": "https://flatsixdynamics.com",
-  "appStoreUrl": "https://apps.apple.com/app/flatsixdynamics",
+  "appStoreUrl": "https://apps.apple.com/app/id6771928529",
+  "instagramUrl": "https://www.instagram.com/flatsixdynamics/",
+  "instagramHandle": "@flatsixdynamics",
   "contactEmail": "support@flatsixdynamics.com",
   "legalEmail": "legal@flatsixdynamics.com",
-  "lastReviewed": "2026-05-28",
+  "lastReviewed": "2026-06-21",
+  "appVersion": "1.2",
+  "appVersionDate": "2026-06-21",
   "language": "en-US"
 }

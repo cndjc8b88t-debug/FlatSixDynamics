@@ -5,6 +5,9 @@ node_modules/
 _site/
 .eleventy-cache/
 
+# Archived stale root build (do not commit)
+_stale_rootbuild_backup/
+
 # OS cruft
 .DS_Store
 .AppleDouble
