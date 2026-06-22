@@ -303,3 +303,45 @@ html[lang="de"] body { font-family: var(--serif); }
 }
 .release ul { padding-left: 1.1rem; }
 .release li { margin-bottom: 0.5rem; }
+
+/* ---- /go/ bio-link bridge: single-CTA, mobile-first doorway ---- */
+.go-hero { padding-top: 1.5rem; }
+/* hero headline must wrap cleanly inside any phone viewport — fluid size,
+   no horizontal overflow on the narrow bio-link target */
+.go-hero h1 {
+    font-size: clamp(1.5rem, 6.4vw, 2.6rem);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+.go-hero .tagline { margin-bottom: 1.5rem; }
+/* money-shot: stay inside the content column on /go/ — opt out of the
+   global .shot viewport-breakout so it never spills past the right edge */
+.go-shot {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    transform: none;
+    margin-top: 0;
+    margin-bottom: 1.75rem;
+}
+/* secondary links: de-emphasized text, never competing with the primary CTA */
+.go-secondary {
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 1.75rem 0 0;
+}
+.go-secondary a { color: var(--muted); text-decoration: none; }
+.go-secondary a:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule); }
+.go-secondary .go-sep { margin: 0 0.6rem; color: var(--rule); }
+
+/* ---- Engineering / About: compact credibility section ---- */
+.engineering .lede-line {
+    font-family: var(--sans);
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin: 0 0 1.75rem;
+}
+.engineering ul { padding-left: 1.1rem; }
+.engineering li { margin-bottom: 0.6rem; }
