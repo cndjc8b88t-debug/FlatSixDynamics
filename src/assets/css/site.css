@@ -277,7 +277,7 @@ html[lang="de"] body { font-family: var(--serif); }
     padding: 0 var(--gap);
 }
 .promo-video { margin-top: 0; margin-bottom: 0; }
-.promo-video video { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; }
+.promo-video video { width: 100%; height: auto; aspect-ratio: 1280 / 588; display: block; }
 
 /* ---- What's New (homepage section) ---- */
 .whats-new-meta {
@@ -314,16 +314,6 @@ html[lang="de"] body { font-family: var(--serif); }
     word-wrap: break-word;
 }
 .go-hero .tagline { margin-bottom: 1.5rem; }
-/* money-shot: stay inside the content column on /go/ — opt out of the
-   global .shot viewport-breakout so it never spills past the right edge */
-.go-shot {
-    width: 100%;
-    max-width: 100%;
-    margin-left: 0;
-    transform: none;
-    margin-top: 0;
-    margin-bottom: 1.75rem;
-}
 /* secondary links: de-emphasized text, never competing with the primary CTA */
 .go-secondary {
     text-align: center;
@@ -335,6 +325,21 @@ html[lang="de"] body { font-family: var(--serif); }
 .go-secondary a { color: var(--muted); text-decoration: none; }
 .go-secondary a:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule); }
 .go-secondary .go-sep { margin: 0 0.6rem; color: var(--rule); }
+/* the reel, replayed: portrait clip straight from Instagram, kept phone-sized
+   even on desktop so it never competes with the CTA below it */
+.go-reel {
+    width: min(15rem, 62vw);
+    margin: 0 auto 1.75rem;
+}
+.go-reel video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 720 / 1280;
+    border-radius: 10px;
+    border: 1px solid var(--rule);
+    box-shadow: 0 10px 34px rgba(20,24,28,0.16);
+}
 
 /* ---- Engineering / About: compact credibility section ---- */
 .engineering .lede-line {
