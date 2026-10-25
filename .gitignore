@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Eleventy build output (rebuilt by CI; never commit)
+_site/
+.eleventy-cache/
+
+# Archived stale root build (do not commit)
+_stale_rootbuild_backup/
+
+# OS cruft
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor cruft
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
