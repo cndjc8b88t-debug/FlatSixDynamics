@@ -17,7 +17,7 @@ permalink: /
 <section class="promo">
     <figure class="shot screen promo-video">
         <video src="/assets/img/app-preview-setuplab.mp4" poster="/assets/img/app-preview-setuplab-poster.jpg"
-               width="1280" height="720" autoplay muted loop playsinline preload="metadata"></video>
+               width="1280" height="720" muted loop playsinline controls preload="none" data-autoplay></video>
         <figcaption>The Setup Lab, live &mdash; ride heights, the underbody flow, and the panel around it, straight off the device.</figcaption>
     </figure>
 </section>
@@ -28,7 +28,7 @@ permalink: /
     <p>Every time a sports car moves, the air bends, races, and breaks around it. You feel it on the road. Here you finally <em>see</em> it &mdash; flowing in real time, in color, in the palm of your hand. The forces that make speed beautiful, revealed.</p>
     <figure class="shot screen">
         <video src="/assets/img/app-flow-development.mp4" poster="/assets/img/app-flow-poster.jpg"
-               width="960" height="440" autoplay muted loop playsinline preload="metadata"></video>
+               width="960" height="440" muted loop playsinline controls preload="none" data-autoplay></video>
         <figcaption>Watch the flow take shape: the first moments are a rough sketch, and with every pass the picture sharpens into the real airflow.</figcaption>
     </figure>
 </section>
@@ -165,3 +165,22 @@ permalink: /
         <a class="cta cta-primary" href="{{ site.appStoreUrlWebsite }}">Download on the App Store &mdash; Free</a>
     </div>
 </section>
+
+{#- The two clips load nothing until they scroll into view (preload="none" + poster).
+    With JavaScript they then play muted, as before; without it, or with reduced motion,
+    they keep their controls and play on tap. Inline, no third-party script. #}
+<script>
+(function () {
+    var clips = document.querySelectorAll("video[data-autoplay]");
+    if (!clips.length || !("IntersectionObserver" in window)) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            var v = e.target;
+            if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+            else { v.pause(); }
+        });
+    }, { rootMargin: "200px 0px" });
+    clips.forEach(function (v) { v.removeAttribute("controls"); io.observe(v); });
+})();
+</script>

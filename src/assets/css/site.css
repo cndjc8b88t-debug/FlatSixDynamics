@@ -99,7 +99,7 @@ main.wide { max-width: 52rem; }
     flex-wrap: wrap;
     gap: 1rem;
 }
-.footer-nav { display: flex; gap: 1.25rem; align-items: center; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; align-items: center; }
 .footer-nav a { text-decoration: none; color: var(--muted); }
 .footer-nav a:hover { color: var(--ink); }
 .footer-ig { display: inline-flex; align-items: center; gap: 0.4rem; }
