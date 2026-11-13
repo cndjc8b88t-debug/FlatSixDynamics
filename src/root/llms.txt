@@ -1,0 +1,36 @@
+# FlatSixDynamics
+
+> FlatSixDynamics is an app for iPhone that shows the airflow around a sports car, live. Drag the speed from a standstill to 400 km/h and watch the air pile up at the nose, race over the roofline and break into a wake behind the car. It is a beautiful, credible visualization of airflow, not a certified engineering tool.
+
+Key facts:
+
+- Platform: iPhone, on the App Store.
+- Price: free, with every feature included. No account, no subscription, no in-app purchase.
+- In the app: a speed slider up to 400 km/h; active rear spoiler or fixed rear wing; three ride heights (Stock, Sport, Track) with a setup-delta readout; pressure, cockpit and Lab views.
+- Photo Import: traces your own car from a side-profile photo, and the same live airflow answers around that shape.
+- Lab: three textbook flows, a cylinder, an airfoil and a converging-diverging nozzle.
+- Live, not a video: nothing is pre-rendered; the picture settles as you watch.
+- Privacy: the app runs entirely on the device. No account, no analytics, no tracking. The website has no cookies and no tracking.
+- Built by an independent developer in Germany. Not affiliated with, endorsed by, or sponsored by any vehicle manufacturer.
+
+## Pages
+
+- [Home](https://flatsixdynamics.com/): what the app shows
+- [The App](https://flatsixdynamics.com/app/): every feature in detail
+- [Questions and answers](https://flatsixdynamics.com/faq/): short factual answers
+- [Engineering](https://flatsixdynamics.com/engineering/): the background behind the app
+- [Notes](https://flatsixdynamics.com/notes/): release notes
+- [Support](https://flatsixdynamics.com/support/): contact and bug reports
+- [App Store](https://apps.apple.com/app/id6771928529): FlatSixDynamics
+
+## Profiles
+
+- [Instagram](https://www.instagram.com/flatsixdynamics/)
+- [X](https://x.com/flatsixdynamics)
+- [YouTube](https://www.youtube.com/@FlatSixDynamicsApp)
+
+## Legal
+
+- [Privacy policy](https://flatsixdynamics.com/privacy/)
+- [Terms of use](https://flatsixdynamics.com/terms/)
+- [Impressum](https://flatsixdynamics.com/impressum/) (German)
