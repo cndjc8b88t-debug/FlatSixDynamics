@@ -14,7 +14,7 @@ smartBanner: false
 
     <figure class="go-reel">
         <video src="/assets/img/go-reel-setuplab.mp4" poster="/assets/img/go-reel-setuplab-poster.jpg"
-               width="720" height="1280" autoplay muted loop playsinline preload="metadata"></video>
+               width="720" height="1280" muted loop playsinline controls preload="none" data-autoplay></video>
     </figure>
 
     <div class="cta-row">
@@ -28,3 +28,5 @@ smartBanner: false
         <a href="{{ site.instagramUrl }}" rel="me noopener" target="_blank">Instagram</a>
     </p>
 </section>
+
+{% include "clip-autoplay.njk" %}

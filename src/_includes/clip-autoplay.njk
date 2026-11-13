@@ -1,0 +1,19 @@
+{#- Clips marked data-autoplay load nothing up front (preload="none" + poster).
+    With JavaScript they play muted once they are in or near view and pause outside it;
+    without it, or with reduced motion, they keep their controls and play on tap.
+    Inline, no third-party script. Used on /, /go/ and /go/paid/. -#}
+<script>
+(function () {
+    var clips = document.querySelectorAll("video[data-autoplay]");
+    if (!clips.length || !("IntersectionObserver" in window)) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            var v = e.target;
+            if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+            else { v.pause(); }
+        });
+    }, { rootMargin: "200px 0px" });
+    clips.forEach(function (v) { v.removeAttribute("controls"); io.observe(v); });
+})();
+</script>
