@@ -66,6 +66,8 @@ main.wide { max-width: 52rem; }
     padding: 1.25rem 1.5rem;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
     align-items: baseline;
     max-width: 52rem;
     margin: 0 auto;
@@ -78,7 +80,7 @@ main.wide { max-width: 52rem; }
     font-size: 0.95rem;
     text-decoration: none;
 }
-.site-nav { display: flex; gap: 1.5rem; font-family: var(--sans); font-size: 0.85rem; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; font-family: var(--sans); font-size: 0.85rem; }
 .site-nav a { text-decoration: none; color: var(--muted); }
 .site-nav a:hover { color: var(--ink); }
 
