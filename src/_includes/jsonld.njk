@@ -1,7 +1,8 @@
 {#- Structured data for the home page. Brand only, no person.
     downloadUrl and sameAs use the plain App Store URL (no campaign token), so the
     identifier stays stable. Visible links keep appStoreUrlWebsite.
-    No applicationCategory, operatingSystem version or rating: not confirmed for the live listing.
+    applicationCategory and minimum iOS follow the live listing (Education, iOS 18.0; Juergen 13.11.2026,
+    Tate K-3). If the category changes in ASC, change it here the same day. No rating.
     Price 0, no in-app purchase: the IAP is off sale since 2.0.2. -#}
 {%- set ld = {
   "@context": "https://schema.org",
@@ -27,7 +28,8 @@
       "@type": "SoftwareApplication",
       "@id": site.baseUrl + "/#app",
       "name": site.title,
-      "operatingSystem": "iOS",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "iOS 18.0 or later",
       "description": "The airflow around a sports car, live on your iPhone. Drag the speed up to 400 km/h, switch spoiler, rear wing and ride height, or bring in your own car from a photo, and watch the air answer.",
       "url": site.baseUrl + "/",
       "image": site.baseUrl + site.ogImage,
