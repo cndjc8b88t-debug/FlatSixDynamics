@@ -29,6 +29,8 @@ export default function (eleventyConfig) {
     // Static passthrough — CSS, images, favicons go to _site untouched.
     eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
     eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
+    // Files served from the site root: favicon.ico, apple-touch-icon.png, llms.txt.
+    eleventyConfig.addPassthroughCopy({ "src/root": "/" });
 
     // Rewrites root-absolute links/assets in the HTML to honour pathPrefix.
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);

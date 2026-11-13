@@ -1,0 +1,42 @@
+{#- Structured data for the home page. Brand only, no person.
+    downloadUrl and sameAs use the plain App Store URL (no campaign token), so the
+    identifier stays stable. Visible links keep appStoreUrlWebsite.
+    No applicationCategory, operatingSystem version or rating: not confirmed for the live listing.
+    Price 0, no in-app purchase: the IAP is off sale since 2.0.2. -#}
+{%- set ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": site.baseUrl + "/#organization",
+      "name": site.title,
+      "url": site.baseUrl + "/",
+      "logo": site.baseUrl + site.logo,
+      "email": site.contactEmail,
+      "sameAs": [site.instagramUrl, site.xUrl, site.youtubeUrl, site.appStoreUrl]
+    },
+    {
+      "@type": "WebSite",
+      "@id": site.baseUrl + "/#website",
+      "name": site.title,
+      "url": site.baseUrl + "/",
+      "inLanguage": "en-US",
+      "publisher": { "@id": site.baseUrl + "/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": site.baseUrl + "/#app",
+      "name": site.title,
+      "operatingSystem": "iOS",
+      "description": "The airflow around a sports car, live on your iPhone. Drag the speed up to 400 km/h, switch spoiler, rear wing and ride height, or bring in your own car from a photo, and watch the air answer.",
+      "url": site.baseUrl + "/",
+      "image": site.baseUrl + site.ogImage,
+      "downloadUrl": site.appStoreUrl,
+      "installUrl": site.appStoreUrl,
+      "sameAs": [site.appStoreUrl],
+      "offers": { "@type": "Offer", "price": 0, "priceCurrency": "USD" },
+      "publisher": { "@id": site.baseUrl + "/#organization" }
+    }
+  ]
+} -%}
+<script type="application/ld+json">{{ ld | dump | safe }}</script>
